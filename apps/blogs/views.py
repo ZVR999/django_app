@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, HttpResponse, redirect
 
+def home(request):
+    return HttpResponse('HomePage')
+
 def index(request):
     response = "Placeholder to list all blogs"
     return HttpResponse(response)
@@ -12,7 +15,7 @@ def new(request):
     return HttpResponse(response)
 
 def create(request):
-    return redirect('/')
+    return redirect('/blogs')
 
 def show(request, number):
     response = 'Placeholder to display '+str(number)
@@ -23,4 +26,4 @@ def edit(request, number):
     return HttpResponse(response)
 
 def destroy(request, number):
-    return redirect('/')
+    return redirect('/blogs')
